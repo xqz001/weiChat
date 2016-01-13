@@ -21,28 +21,32 @@ class MainViewController: UITabBarController {
         messageVc.tabBarItem.image = UIImage(named: "tabbar_mainframe")?.imageWithRenderingMode(.AlwaysOriginal)
         messageVc.tabBarItem.selectedImage = UIImage(named: "tabbar_mainframeHL")?.imageWithRenderingMode(.AlwaysOriginal)
         messageVc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red: 47.0 / 255.0, green: 177.0 / 255.0, blue: 9.0 / 255.0, alpha: 1.0)], forState: .Selected)
-        self.addChildViewController(messageVc)
+        let messageNav = NavigationViewController.init(rootViewController: messageVc)
+        self.addChildViewController(messageNav)
         
         // 通讯录
         let contactsVc = ContactsTableViewController()
         contactsVc.title = "通讯录"
         contactsVc.tabBarItem.image = UIImage(named: "tabbar_contacts")?.imageWithRenderingMode(.AlwaysOriginal)
         contactsVc.tabBarItem.selectedImage = UIImage(named: "tabbar_contactsHL")?.imageWithRenderingMode(.AlwaysOriginal)
-        self.addChildViewController(contactsVc)
+        let contactsNav = NavigationViewController.init(rootViewController: contactsVc)
+        self.addChildViewController(contactsNav)
         
         // 发现
         let discoverVc  = DiscoverTableViewController()
         discoverVc.title = "发现"
         discoverVc.tabBarItem.image = UIImage(named: "tabbar_discover")?.imageWithRenderingMode(.AlwaysOriginal)
         discoverVc.tabBarItem.selectedImage = UIImage(named: "tabbar_discoverHL")?.imageWithRenderingMode(.AlwaysOriginal)
-        self.addChildViewController(discoverVc)
+        let discoverNav = NavigationViewController.init(rootViewController: discoverVc)
+        self.addChildViewController(discoverNav)
         
         // 我
         let meVc = MeTableViewController()
         meVc.title = "我"
         meVc.tabBarItem.image = UIImage(named: "tabbar_me")?.imageWithRenderingMode(.AlwaysOriginal)
         meVc.tabBarItem.selectedImage = UIImage(named: "tabbar_meHL")?.imageWithRenderingMode(.AlwaysOriginal)
-        self.addChildViewController(meVc)
+        let meNav = NavigationViewController.init(rootViewController: meVc)
+        self.addChildViewController(meNav)
 }
 
     override func didReceiveMemoryWarning() {
