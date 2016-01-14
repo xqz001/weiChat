@@ -32,6 +32,7 @@ class MainViewController: UITabBarController {
         // 我
         let meVc = MeTableViewController()
         addChildViewController(meVc, title: "我", image: UIImage(named: "tabbar_me"), selectedImage: UIImage(named: "tabbar_meHL"))
+
 }
 
     override func didReceiveMemoryWarning() {
